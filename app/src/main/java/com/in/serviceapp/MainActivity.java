@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,6 +35,12 @@ public class MainActivity extends AppCompatActivity
                 if (user != null) {
                     // User is signed in
                     Log.d("Auth Status: ", "onAuthStateChanged:signed_in:" + user.getUid());
+
+                    if(user.isEmailVerified()){
+
+                    }else{
+                        Toast.makeText(MainActivity.this,"Please Verify Your Account via Email Link.",Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     // User is signed out
                     Log.d("Auth Status: ", "onAuthStateChanged:signed_out");

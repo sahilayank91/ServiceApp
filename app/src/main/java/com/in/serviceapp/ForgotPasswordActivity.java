@@ -1,5 +1,6 @@
 package com.in.serviceapp;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,7 +42,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         Log.d("PASSWORD RESET", "Email sent.");
                                         Toast.makeText(ForgotPasswordActivity.this, "A Password Reset Mail has been sent to " + email.getText().toString(), Toast.LENGTH_LONG).show();
-
+                                        Intent intent = new Intent(ForgotPasswordActivity.this,LoginActivity.class);
+                                        startActivity(intent);
+                                        finish();
                                     }
                                 }
                             });

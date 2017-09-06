@@ -24,30 +24,11 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                    Log.d("Auth Status: ", "onAuthStateChanged:signed_in:" + user.getUid());
 
-                    if(user.isEmailVerified()){
-
-                    }else{
-                        Toast.makeText(MainActivity.this,"Please Verify Your Account via Email Link.",Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    // User is signed out
-                    Log.d("Auth Status: ", "onAuthStateChanged:signed_out");
-                }
-                // ...
-            }
-        };
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -66,9 +47,30 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d("Auth Status: ", "onAuthStateChanged:signed_in:" + user.getUid());
+
+
+
+                } else {
+                    // User is signed out
+                    navigationView.getMenu().getItem(4).setVisible(false);
+                    Log.d("Auth Status: ", "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
     }
     @Override
     public void onStart() {
@@ -113,6 +115,12 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+    private void signOut() {
+        mAuth.signOut();
+        Intent intent = new Intent(MainActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -133,8 +141,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_logout) {
+            signOut();
+            Toast.makeText(MainActivity.this,"Signing you Out !!",Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

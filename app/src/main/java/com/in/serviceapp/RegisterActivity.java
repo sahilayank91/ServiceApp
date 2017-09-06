@@ -396,6 +396,8 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Log.d("Email :", "Email sent.");
+                                }else{
+                                    Toast.makeText(getApplicationContext(),"Verification Link Sending Failed!! Please Check your internet Connection",Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

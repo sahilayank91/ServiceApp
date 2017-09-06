@@ -94,4 +94,6 @@
 
     <string name="id_fmt">User ID: %s</string>
     <string name="email_fmt">Email: %s</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

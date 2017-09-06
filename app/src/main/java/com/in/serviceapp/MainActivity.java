@@ -92,8 +92,9 @@ public class MainActivity extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new BreakFastFragment(), "List");
-
+        adapter.addFragment(new BreakFastFragment(), "Breakfast");
+        adapter.addFragment(new BreakFastFragment(), "Lunch");
+        adapter.addFragment(new BreakFastFragment(), "Dinner");
         viewPager.setAdapter(adapter);
     }
 

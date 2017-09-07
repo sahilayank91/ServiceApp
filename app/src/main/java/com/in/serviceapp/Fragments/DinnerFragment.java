@@ -28,7 +28,7 @@ import com.in.serviceapp.R;
 
  */
 
-public class BreakFastFragment extends Fragment {
+public class DinnerFragment extends Fragment {
 
     @Override
 

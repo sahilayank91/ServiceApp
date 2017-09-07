@@ -31,6 +31,10 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Uploader.MenuUploader"
+            android:label="@string/title_activity_menu_uploader"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

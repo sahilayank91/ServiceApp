@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -82,9 +83,10 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
                 } else {
                     // User is signed out
-                    navigationView.getMenu().getItem(4).setVisible(false);
+
                     Log.d("Auth Status: ", "onAuthStateChanged:signed_out");
                 }
                 // ...
@@ -186,7 +188,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id .nav_account) {
+        if (id == R.id.nav_account) {
             // Handle the camera action
             Intent intent  =new Intent(MainActivity.this,MenuActivity.class);
             startActivity(intent);

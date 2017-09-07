@@ -334,6 +334,8 @@ public class LoginActivity extends AppCompatActivity implements
                 break;
             case STATE_SIGNIN_SUCCESS:
                 // Np-op, handled by sign-in check
+
+
                 break;
         }
 
@@ -345,11 +347,6 @@ public class LoginActivity extends AppCompatActivity implements
             mStatusText.setText(R.string.signed_out);;
         } else {
             // Signed in
-
-         /*   Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-            startActivity(intent);
-            finish();*/
-
             mPhoneNumberViews.setVisibility(View.GONE);
             mSignedInViews.setVisibility(View.VISIBLE);
 
@@ -359,6 +356,9 @@ public class LoginActivity extends AppCompatActivity implements
 
             mStatusText.setText(R.string.signed_in);
             mDetailText.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 

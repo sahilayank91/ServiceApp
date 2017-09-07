@@ -10,10 +10,7 @@
             android:id="@+id/nav_cart"
             android:icon="@drawable/ic_shopping_cart_black_24dp"
             android:title="My Cart" />
-        <item
-            android:id="@+id/nav_feedback"
-            android:icon="@drawable/ic_feedback_black_24dp"
-            android:title="Gallery" />
+
         <item
             android:id="@+id/nav_login"
             android:icon="@drawable/ic_input_black_24dp"
@@ -22,23 +19,38 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="Sign Out" />
+<group>
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help_outline_black_24dp"
+            android:title="Help" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/ic_feedback_black_24dp"
+            android:title="Feedback" />
+        <item
+            android:id="@+id/nav_legal"
+            android:icon="@drawable/ic_gavel_black_24dp"
+            android:title="Legal" />
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="Rate Us" />
+</group>
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_legal"
-                android:icon="@drawable/ic_people_outline_black_24dp"
-                android:title="Login" />
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_android_black_24dp"
-                android:title="Sign Out" />
-        </menu>
-    </item>
+
+
+
 
 </menu>

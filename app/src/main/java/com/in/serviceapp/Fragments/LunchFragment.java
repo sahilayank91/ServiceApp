@@ -1,27 +1,11 @@
 package com.in.serviceapp.Fragments;
 
-import android.app.Fragment;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.in.serviceapp.R;
-
-import static com.in.serviceapp.R.id.parent;
-
-
 /**
- * Created by root on 6/9/17.
+ * Created by student on 07-Sep-17.
  */
 
 
 import android.content.Context;
-
-import android.content.Intent;
 
 import android.content.res.Resources;
 
@@ -31,6 +15,7 @@ import android.graphics.drawable.Drawable;
 
 import android.os.Bundle;
 
+import android.support.v4.app.Fragment;
 
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -42,20 +27,20 @@ import android.view.View;
 
 import android.view.ViewGroup;
 
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 
 import android.widget.TextView;
 
+import com.in.serviceapp.R;
 
 
 /**
 
- * Provides UI for the view with List.
+ * Provides UI for the view with Cards.
 
  */
 
-public class BreakFastFragment extends android.support.v4.app.Fragment {
+public class LunchFragment extends Fragment {
 
     @Override
 
@@ -72,9 +57,11 @@ public class BreakFastFragment extends android.support.v4.app.Fragment {
         recyclerView.setAdapter(adapter);
 
         recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-     
+
+        recyclerView.setLayoutManager(layoutManager);
 
         return recyclerView;
 
@@ -84,7 +71,7 @@ public class BreakFastFragment extends android.support.v4.app.Fragment {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView avator;
+        public ImageView picture;
 
         public TextView name;
 
@@ -92,13 +79,13 @@ public class BreakFastFragment extends android.support.v4.app.Fragment {
 
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
 
-            super(inflater.inflate(R.layout.item_list, parent, false));
+            super(inflater.inflate(R.layout.item_card, parent, false));
 
-            avator = (ImageView) itemView.findViewById(R.id.list_avatar);
+            picture = (ImageView) itemView.findViewById(R.id.card_image);
 
-            name = (TextView) itemView.findViewById(R.id.list_title);
+            name = (TextView) itemView.findViewById(R.id.card_title);
 
-            description = (TextView) itemView.findViewById(R.id.list_desc);
+            description = (TextView) itemView.findViewById(R.id.card_text);
 
         }
 
@@ -116,13 +103,31 @@ public class BreakFastFragment extends android.support.v4.app.Fragment {
 
         private static final int LENGTH = 18;
 
+        private final String[] mPlaces;
+
+        private final String[] mPlaceDesc;
+
+        private final Drawable[] mPlacePictures;
 
         public ContentAdapter(Context context) {
 
             Resources resources = context.getResources();
 
+            mPlaces = resources.getStringArray(R.array.places);
 
+            mPlaceDesc = resources.getStringArray(R.array.place_locations);
 
+            TypedArray a = resources.obtainTypedArray(R.array.places_picture);
+
+            mPlacePictures = new Drawable[a.length()];
+
+            for (int i = 0; i < mPlacePictures.length; i++) {
+
+                mPlacePictures[i] = a.getDrawable(i);
+
+            }
+
+            a.recycle();
 
         }
 
@@ -142,6 +147,11 @@ public class BreakFastFragment extends android.support.v4.app.Fragment {
 
         public void onBindViewHolder(ViewHolder holder, int position) {
 
+            holder.picture.setImageDrawable(mPlacePictures[position % mPlacePictures.length]);
+
+            holder.name.setText(mPlaces[position % mPlaces.length]);
+
+            holder.description.setText(mPlaceDesc[position % mPlaceDesc.length]);
 
         }
 

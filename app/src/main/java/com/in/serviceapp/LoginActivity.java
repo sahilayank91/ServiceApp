@@ -346,11 +346,11 @@ public class LoginActivity extends AppCompatActivity implements
         } else {
             // Signed in
 
-            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+         /*   Intent intent = new Intent(LoginActivity.this,MainActivity.class);
             startActivity(intent);
-            finish();
+            finish();*/
 
-            /*mPhoneNumberViews.setVisibility(View.GONE);
+            mPhoneNumberViews.setVisibility(View.GONE);
             mSignedInViews.setVisibility(View.VISIBLE);
 
             enableViews(mPhoneNumberField, mVerificationField);
@@ -358,7 +358,7 @@ public class LoginActivity extends AppCompatActivity implements
             mVerificationField.setText(null);
 
             mStatusText.setText(R.string.signed_in);
-            mDetailText.setText(getString(R.string.firebase_status_fmt, user.getUid()));*/
+            mDetailText.setText(getString(R.string.firebase_status_fmt, user.getUid()));
         }
     }
 

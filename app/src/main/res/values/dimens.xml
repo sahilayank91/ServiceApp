@@ -36,7 +36,7 @@
 
     <dimen name="article_subheading">16sp</dimen>
 
-    <dimen name="card_image_height">200dp</dimen>
+    <dimen name="card_image_height">400dp</dimen>
 
     <dimen name="list_body">14sp</dimen>
 

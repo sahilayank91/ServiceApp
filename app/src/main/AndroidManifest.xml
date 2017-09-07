@@ -35,7 +35,8 @@
         <activity
             android:name=".Uploader.MenuUploader"
             android:label="@string/title_activity_menu_uploader"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SubscriptionActivity"></activity>
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@
             android:title="Gallery" />
         <item
             android:id="@+id/nav_login"
-            android:icon="@drawable/ic_people_outline_black_24dp"
+            android:icon="@drawable/ic_input_black_24dp"
             android:title="Login" />
         <item
             android:id="@+id/nav_manage"

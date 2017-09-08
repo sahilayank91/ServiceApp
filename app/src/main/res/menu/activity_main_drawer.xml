@@ -12,6 +12,11 @@
             android:title="My Cart" />
 
         <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+            android:title="My Wallet" />
+
+        <item
             android:id="@+id/nav_login"
             android:icon="@drawable/ic_input_black_24dp"
             android:title="Login" />
@@ -23,11 +28,12 @@
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"
-            android:title="Share" />
+            android:title="Invite Friends" />
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_android_black_24dp"
             android:title="Sign Out" />
+    </group>
 <group>
 
         <item
@@ -47,7 +53,7 @@
             android:icon="@drawable/ic_star_black_24dp"
             android:title="Rate Us" />
 </group>
-    </group>
+
 
 
 

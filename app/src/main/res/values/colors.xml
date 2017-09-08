@@ -8,6 +8,6 @@
     <color name="dark_grey">#424242</color>
 
     <color name="medium_grey">#9E9E9E</color>
-
+    <color name="profile_value_text_color">#000000</color>
     <color name="button_grey">#757575</color>
 </resources>

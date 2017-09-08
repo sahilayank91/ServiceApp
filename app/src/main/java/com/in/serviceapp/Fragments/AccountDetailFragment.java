@@ -21,8 +21,6 @@ public class AccountDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.account_detail, container, false);
-
-
+        return inflater.inflate(R.layout.account_detail, container, true);
     }
 }

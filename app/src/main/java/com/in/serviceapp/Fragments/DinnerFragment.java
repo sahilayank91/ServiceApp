@@ -65,7 +65,7 @@ public class DinnerFragment extends Fragment {
         public ImageView picture;
 
         public TextView name;
-        private Button subscribe;
+        public Button subscribe;
         public TextView description;
 
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {

@@ -21,15 +21,17 @@ public class SubscriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_subscription);
         break_add=(ImageButton)findViewById(R.id.breakfast_add);
         break_min = (ImageButton)findViewById(R.id.breakfast_minus);
-        break_min.setEnabled(false);
+      //  break_min.setEnabled(false);
+       // break_min.setClickable(false);
         breakfast = (TextView)findViewById(R.id.breakfast_count);
 
-        break_add.setOnClickListener(new View.OnClickListener() {
+      /*  break_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int num = Integer.parseInt(breakfast.getText().toString());
                 num= num+1;
                 breakfast.setText(num);
+                break_min.setEnabled(true);
             }
         });
 
@@ -44,7 +46,7 @@ public class SubscriptionActivity extends AppCompatActivity {
                     breakfast.setText(num);
                 }
             }
-        });
+        });*/
 
 
 

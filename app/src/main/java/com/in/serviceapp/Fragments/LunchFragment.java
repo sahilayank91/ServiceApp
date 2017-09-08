@@ -63,7 +63,7 @@ public class LunchFragment extends Fragment {
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView picture;
-        private Button subscribe;
+        public Button subscribe;
         public TextView name;
 
         public TextView description;

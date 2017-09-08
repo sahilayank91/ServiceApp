@@ -6,6 +6,7 @@ package com.in.serviceapp.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -16,10 +17,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.in.serviceapp.R;
+import com.in.serviceapp.SubscriptionActivity;
 
 
 /**
@@ -62,7 +65,7 @@ public class DinnerFragment extends Fragment {
         public ImageView picture;
 
         public TextView name;
-
+        private Button subscribe;
         public TextView description;
 
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
@@ -74,7 +77,14 @@ public class DinnerFragment extends Fragment {
             name = (TextView) itemView.findViewById(R.id.card_title);
 
             description = (TextView) itemView.findViewById(R.id.card_text);
-
+            subscribe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, SubscriptionActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
 
     }

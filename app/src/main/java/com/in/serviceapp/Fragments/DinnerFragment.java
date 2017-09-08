@@ -75,7 +75,7 @@ public class DinnerFragment extends Fragment {
             picture = (ImageView) itemView.findViewById(R.id.card_image);
 
             name = (TextView) itemView.findViewById(R.id.card_title);
-
+            subscribe = (Button)itemView.findViewById(R.id.subscribe);
             description = (TextView) itemView.findViewById(R.id.card_text);
             subscribe.setOnClickListener(new View.OnClickListener() {
                 @Override

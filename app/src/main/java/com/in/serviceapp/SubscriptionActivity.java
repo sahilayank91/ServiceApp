@@ -3,6 +3,7 @@ package com.in.serviceapp;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -18,11 +19,9 @@ public class SubscriptionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subscription);
+        setContentView(R.layout.activity_subscription_detail);
         break_add=(ImageButton)findViewById(R.id.breakfast_add);
         break_min = (ImageButton)findViewById(R.id.breakfast_minus);
-      //  break_min.setEnabled(false);
-       // break_min.setClickable(false);
         breakfast = (TextView)findViewById(R.id.breakfast_count);
 
       /*  break_add.setOnClickListener(new View.OnClickListener() {

@@ -21,7 +21,8 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+
+            super.onBackPressed();
     }
 
     @Override
@@ -118,6 +119,12 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
 
 
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 
     @Override

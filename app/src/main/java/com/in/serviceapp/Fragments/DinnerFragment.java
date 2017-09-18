@@ -99,7 +99,7 @@ public class DinnerFragment extends Fragment {
 
         // Set numbers of List in RecyclerView.
 
-        private static final int LENGTH = 18;
+        private static final int LENGTH = 7;
 
         private final String[] mPlaces;
 

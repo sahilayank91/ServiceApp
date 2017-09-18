@@ -24,8 +24,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
-        email = (EditText)findViewById(R.id.forgot_email);
-        verify = (Button)findViewById(R.id.forgot_button);
+        email = findViewById(R.id.forgot_email);
+        verify =findViewById(R.id.forgot_button);
 
         verify.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,46 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+    android:layout_height="match_parent"
+    tools:context="com.in.serviceapp.AccountActivity">
+    <android.support.v7.widget.CardView
+        android:id="@+id/data_holder"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-        <android.support.v7.widget.Toolbar
-            android:layout_height="?attr/actionBarSize"
-            android:layout_width="match_parent"
-            app:layout_scrollFlags="scroll|enterAlways"></android.support.v7.widget.Toolbar>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+        app:cardElevation="5dp"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:cardCornerRadius="11dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        >
+        <!--4-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:tabMode="scrollable">
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
 
-            <android.support.design.widget.TabItem
+            android:paddingRight="16dp">
+
+            <QuickContactBadge
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:drawingCacheQuality="high"
+                app:srcCompat="@drawable/ic_account_circle_black_24dp"
+                android:layout_gravity="center"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:layout_marginBottom="14dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/darker_gray"></View>
+
+            <!--Department label-->
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Account Details" />
+                android:drawableStart="@drawable/ic_account_circle_black_24dp"
+                android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+                android:drawablePadding="5dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:text="Email"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
 
-            <android.support.design.widget.TabItem
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:layout_marginBottom="14dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/darker_gray"></View>
+
+            <!--Department text-->
+            <TextView
+                android:id="@+id/profile_department_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Wallet Details" />
-        </android.support.design.widget.TabLayout>
-    </android.support.design.widget.AppBarLayout>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:text="sahilayank91@gmail.com"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/profile_value_text_color"
+                android:textStyle="normal" />
 
-    </android.support.v4.widget.NestedScrollView>
-</android.support.design.widget.CoordinatorLayout>
+            <!--Mobile No label-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_contact_phone_black_24dp"
+                android:drawableLeft="@drawable/ic_contact_phone_black_24dp"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="16dp"
+                android:text="Mobile No"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:layout_marginBottom="14dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/darker_gray"></View>
+
+            <!--Department text-->
+            <TextView
+                android:id="@+id/profile_member_since"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:text="9636004841"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/profile_value_text_color"
+                android:textStyle="normal" />
+
+            <!--Summary label-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_my_location_black_24dp"
+                android:drawableLeft="@drawable/ic_my_location_black_24dp"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="16dp"
+                android:text="Location"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:layout_marginBottom="14dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/darker_gray"></View>
+
+            <!--Location text-->
+            <TextView
+                android:id="@+id/profile_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="0dp"
+                android:text="Hostel No 8, Room No 50, MNIT, Drona Hostel,Jaipur"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="#000000"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

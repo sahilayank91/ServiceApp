@@ -7,8 +7,8 @@ import com.google.firebase.database.IgnoreExtraProperties;
  */
 @IgnoreExtraProperties
 public class Wallet {
-        private long amount;
-        private String userid;
+        public long amount;
+        public String userid;
 
     public Wallet() {
         //Default Constructor

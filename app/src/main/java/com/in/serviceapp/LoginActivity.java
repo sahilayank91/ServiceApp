@@ -69,10 +69,14 @@ public class LoginActivity extends AppCompatActivity implements
     private Button mResendButton;
     private Button mSignOutButton;
 
+    private String userId;
+    private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         // Restore instance state
         if (savedInstanceState != null) {
@@ -373,12 +377,11 @@ public class LoginActivity extends AppCompatActivity implements
                 break;
             case STATE_SIGNIN_SUCCESS:
                 // Np-op, handled by sign-in check
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("wallet");
-                myRef.setValue(50);
+
 
                 break;
         }
+
 
         if (user == null) {
             // Signed out
@@ -397,7 +400,9 @@ public class LoginActivity extends AppCompatActivity implements
 
             mStatusText.setText(R.string.signed_in);
             mDetailText.setText(getString(R.string.firebase_status_fmt, user.getUid()));
-            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            String phone = mPhoneNumberField.getText().toString();
+            Intent intent  = new Intent(LoginActivity.this,LandingActivity.class);
+            intent.putExtra("phone",phone);
             startActivity(intent);
             finish();
         }

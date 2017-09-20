@@ -67,7 +67,8 @@
         <activity
             android:name=".ReachUs"
             android:label="@string/title_activity_reach_us" />
-        <activity android:name=".AccountActivity"></activity>
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".LandingActivity"></activity>
     </application>
 
 </manifest>

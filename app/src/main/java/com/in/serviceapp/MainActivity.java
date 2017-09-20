@@ -48,6 +48,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.R.attr.data;
+import static android.R.attr.fingerprintAuthDrawable;
 import static android.R.attr.name;
 
 public class MainActivity extends AppCompatActivity
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity
     private FirebaseDatabase database;
     private DatabaseReference ref;
     private FirebaseUser firebaseUser;
+    private TextView header_mobile;
+    private TextView header_name;
+
 
     private int rating;
     @Override
@@ -75,8 +79,8 @@ public class MainActivity extends AppCompatActivity
         // Set Tabs inside Toolbar
         TabLayout tabs =  findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-
-        firebaseUser = mAuth.getCurrentUser();
+        header_mobile = findViewById(R.id.header_phone);
+        header_name = findViewById(R.id.header_name);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -87,7 +91,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         mAuth = FirebaseAuth.getInstance();
-        ref = database.getReference("rating");
+        firebaseUser = mAuth.getCurrentUser();
+
+       // ref = database.getReference("rating");
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -100,14 +106,15 @@ public class MainActivity extends AppCompatActivity
                     nav_Menu.findItem(R.id.nav_wallet).setVisible(true);
                     nav_Menu.findItem(R.id.nav_account).setVisible(true);
                     nav_Menu.findItem(R.id.nav_login).setVisible(false);
-
-
+                  /*  header_mobile.setText(user.getPhoneNumber());
+                    header_name.setText(user.getDisplayName());*/
 
                 } else {
                     // User is signed out
 
                     Log.e("Auth Status: ", "onAuthStateChanged:signed_out");
                     Menu nav_Menu = navigationView.getMenu();
+
                     nav_Menu.findItem(R.id.nav_logout).setVisible(false);
                     nav_Menu.findItem(R.id.nav_wallet).setVisible(false);
                     nav_Menu.findItem(R.id.nav_account).setVisible(false);
@@ -117,7 +124,7 @@ public class MainActivity extends AppCompatActivity
         };
         database = FirebaseDatabase.getInstance();
 
-        ref.addValueEventListener(new ValueEventListener() {
+       /* ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -132,7 +139,7 @@ public class MainActivity extends AppCompatActivity
                 Log.e("Update Value", "Failed to read value.", error.toException());
             }
         });
-
+*/
 
     }
 

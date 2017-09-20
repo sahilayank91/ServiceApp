@@ -68,7 +68,11 @@
             android:name=".ReachUs"
             android:label="@string/title_activity_reach_us" />
         <activity android:name=".AccountActivity" />
-        <activity android:name=".LandingActivity"></activity>
+        <activity android:name=".LandingActivity" />
+        <activity
+            android:name=".MyCart"
+            android:label="@string/title_activity_my_cart"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

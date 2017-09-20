@@ -112,7 +112,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("WALLET UPDATIOIN","updating");
+                Log.e("WALLET UPDATION","updating");
                 updateWallet();
             }
         });
@@ -120,9 +120,10 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onClick(View view) {
                 int num =Integer.parseInt(lunch.getText().toString());
-                num = num+1;
+                num = num + 1;
                 dinner.setText(String.valueOf(num));
                 dinner_min.setEnabled(true);
+
             }
         });
         dinner_min.setOnClickListener(new View.OnClickListener() {
@@ -204,7 +205,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
-        
+
     }
 
     private void updateWallet(){
